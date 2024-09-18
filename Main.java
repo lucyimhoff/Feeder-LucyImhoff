@@ -12,6 +12,7 @@ public class Main
        //int random = (int) (Math.random() * 50 + 1);
        //System.out.println(random);
        System.out.println();
+       System.out.println(Math.random() < 0.05);
     }
 
 }
