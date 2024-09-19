@@ -12,17 +12,18 @@ public class Feeder {
      */
     public void simulateOneDay(int numBirds)
     {
-        int bird = (int) (Math.random() * 100 + 1);
-        if (bird > 5){
-            int grams = (int)(Math.random() * 50 + 10 );
-            int eaten = grams * numBirds;
-            currentFood = currentFood- eaten;
+        if(Math.random() < 0.05) currentFood = 0;
+        else
+        {
+            int eaten = (int)(Math.random() * 41) + 10;
+            currentFood -= eaten * numBirds;
+            if(currentFood < 0) currentFood = 0;
+        }
         
-        }
-        if (bird <= 5){
-            currentFood = 0;
-            
-        }
+    }
+    public String toString()
+    {
+        return "Current Food: " + currentFood;
     }
 
     /**
@@ -32,6 +33,12 @@ public class Feeder {
      */
     public int simulateManyDays(int numBirds, int numDays) 
     {
+        int days = 0;
+        if (currentFood == 0) numDays = 0;
+        else
+        {
+        
+        }
         return 0;
     }
     public int getCurrentFood()
